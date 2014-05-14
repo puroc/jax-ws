@@ -1,0 +1,327 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:soapui-project activeEnvironment="Default" name="emp-user" resourceRoot="" soapui-version="4.6.4" xmlns:con="http://eviware.com/soapui/config"><con:settings/><con:interface xsi:type="con:WsdlInterface" wsaVersion="NONE" name="UserServiceSoapBinding" type="wsdl" bindingName="{www.cattsoft.com}UserServiceSoapBinding" soapVersion="1_1" anonymous="optional" definition="file:/workspace/rock/jax-ws-test/src/main/webapp/WEB-INF/wsdl/UserService.xml" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:settings/><con:definitionCache type="TEXT" rootPart="file:/workspace/rock/jax-ws-test/src/main/webapp/WEB-INF/wsdl/UserService.xml"><con:part><con:url>file:/workspace/rock/jax-ws-test/src/main/webapp/WEB-INF/wsdl/UserService.xml</con:url><con:content><![CDATA[<wsdl:definitions targetNamespace="www.cattsoft.com" xmlns:apachesoap="http://xml.apache.org/xml-soap" xmlns:impl="www.cattsoft.com" xmlns:intf="www.cattsoft.com" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:wsdlsoap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <!--WSDL created by Apache Axis version: 1.4
+Built on Apr 22, 2006 (06:55:48 PDT)-->
+  <wsdl:message name="updatePersonRequest">
+    <wsdl:part name="personXML" type="xsd:string"/>
+  </wsdl:message>
+  <wsdl:message name="deletePersonRequest">
+    <wsdl:part name="personXML" type="xsd:string"/>
+  </wsdl:message>
+  <wsdl:message name="addPersonResponse">
+    <wsdl:part name="addPersonReturn" type="xsd:string"/>
+  </wsdl:message>
+  <wsdl:message name="updatePersonResponse">
+    <wsdl:part name="updatePersonReturn" type="xsd:string"/>
+  </wsdl:message>
+  <wsdl:message name="deletePersonResponse">
+    <wsdl:part name="deletePersonReturn" type="xsd:string"/>
+  </wsdl:message>
+  <wsdl:message name="addPersonRequest">
+    <wsdl:part name="personXML" type="xsd:string"/>
+  </wsdl:message>
+  <wsdl:portType name="UserServiceAgent">
+    <wsdl:operation name="addPerson" parameterOrder="personXML">
+      <wsdl:input message="impl:addPersonRequest" name="addPersonRequest"/>
+      <wsdl:output message="impl:addPersonResponse" name="addPersonResponse"/>
+    </wsdl:operation>
+    <wsdl:operation name="deletePerson" parameterOrder="personXML">
+      <wsdl:input message="impl:deletePersonRequest" name="deletePersonRequest"/>
+      <wsdl:output message="impl:deletePersonResponse" name="deletePersonResponse"/>
+    </wsdl:operation>
+    <wsdl:operation name="updatePerson" parameterOrder="personXML">
+      <wsdl:input message="impl:updatePersonRequest" name="updatePersonRequest"/>
+      <wsdl:output message="impl:updatePersonResponse" name="updatePersonResponse"/>
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="UserServiceSoapBinding" type="impl:UserServiceAgent">
+    <wsdlsoap:binding style="rpc" transport="http://schemas.xmlsoap.org/soap/http"/>
+    <wsdl:operation name="addPerson">
+      <wsdlsoap:operation soapAction=""/>
+      <wsdl:input name="addPersonRequest">
+        <wsdlsoap:body namespace="http://agent.ws.service.inter.coc.cattsoft.com" use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="addPersonResponse">
+        <wsdlsoap:body namespace="www.cattsoft.com" use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="deletePerson">
+      <wsdlsoap:operation soapAction=""/>
+      <wsdl:input name="deletePersonRequest">
+        <wsdlsoap:body namespace="http://agent.ws.service.inter.coc.cattsoft.com" use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="deletePersonResponse">
+        <wsdlsoap:body namespace="www.cattsoft.com" use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="updatePerson">
+      <wsdlsoap:operation soapAction=""/>
+      <wsdl:input name="updatePersonRequest">
+        <wsdlsoap:body namespace="http://agent.ws.service.inter.coc.cattsoft.com" use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="updatePersonResponse">
+        <wsdlsoap:body namespace="www.cattsoft.com" use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="UserServiceAgentService">
+    <wsdl:port binding="impl:UserServiceSoapBinding" name="UserService">
+      <wsdlsoap:address location="http://localhost:8080/coc_test/services/UserService"/>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>]]></con:content><con:type>http://schemas.xmlsoap.org/wsdl/</con:type></con:part></con:definitionCache><con:endpoints><con:endpoint>http://localhost:8080/coc_test/services/UserService</con:endpoint></con:endpoints><con:operation isOneWay="false" action="" name="addPerson" bindingOperationName="addPerson" type="Request-Response" outputName="addPersonResponse" inputName="addPersonRequest" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call name="Request 1"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:8080/jax/UserService</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:agen="http://agent.ws.service.inter.coc.cattsoft.com">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <agen:addPerson>
+         <personXML>?</personXML>
+      </agen:addPerson>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:credentials><con:authType>Global HTTP Settings</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="www.cattsoft.com/UserServiceAgent/addPersonRequest"/><con:wsrmConfig version="1.2"/></con:call></con:operation><con:operation isOneWay="false" action="" name="deletePerson" bindingOperationName="deletePerson" type="Request-Response" outputName="deletePersonResponse" inputName="deletePersonRequest" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:8080/coc_test/services/UserService</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:agen="http://agent.ws.service.inter.coc.cattsoft.com">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <agen:deletePerson>
+         <personXML>?</personXML>
+      </agen:deletePerson>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="www.cattsoft.com/UserServiceAgent/deletePersonRequest"/></con:call></con:operation><con:operation isOneWay="false" action="" name="updatePerson" bindingOperationName="updatePerson" type="Request-Response" outputName="updatePersonResponse" inputName="updatePersonRequest" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:8080/coc_test/services/UserService</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:agen="http://agent.ws.service.inter.coc.cattsoft.com">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <agen:updatePerson>
+         <personXML>?</personXML>
+      </agen:updatePerson>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="www.cattsoft.com/UserServiceAgent/updatePersonRequest"/></con:call></con:operation></con:interface><con:interface xsi:type="con:WsdlInterface" wsaVersion="NONE" name="RoleServiceSoapBinding" type="wsdl" bindingName="{www.cattsoft.com}RoleServiceSoapBinding" soapVersion="1_1" anonymous="optional" definition="file:/workspace/rock/jax-ws-test/src/main/webapp/WEB-INF/wsdl/RoleService.xml" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:settings/><con:definitionCache type="TEXT" rootPart="file:/workspace/rock/jax-ws-test/src/main/webapp/WEB-INF/wsdl/RoleService.xml"><con:part><con:url>file:/workspace/rock/jax-ws-test/src/main/webapp/WEB-INF/wsdl/RoleService.xml</con:url><con:content><![CDATA[<wsdl:definitions targetNamespace="www.cattsoft.com" xmlns:apachesoap="http://xml.apache.org/xml-soap" xmlns:impl="www.cattsoft.com" xmlns:intf="www.cattsoft.com" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:wsdlsoap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <!--WSDL created by Apache Axis version: 1.4
+Built on Apr 22, 2006 (06:55:48 PDT)-->
+  <wsdl:message name="updateRoleResponse">
+    <wsdl:part name="updateRoleReturn" type="xsd:string"/>
+  </wsdl:message>
+  <wsdl:message name="addUserRoleSetResponse">
+    <wsdl:part name="addUserRoleSetReturn" type="xsd:string"/>
+  </wsdl:message>
+  <wsdl:message name="deleteRoleRequest">
+    <wsdl:part name="roleXML" type="xsd:string"/>
+  </wsdl:message>
+  <wsdl:message name="addRoleRequest">
+    <wsdl:part name="roleXML" type="xsd:string"/>
+  </wsdl:message>
+  <wsdl:message name="updateRoleRequest">
+    <wsdl:part name="roleXML" type="xsd:string"/>
+  </wsdl:message>
+  <wsdl:message name="deleteUserRoleSetRequest">
+    <wsdl:part name="userRoleXML" type="xsd:string"/>
+  </wsdl:message>
+  <wsdl:message name="deleteRoleResponse">
+    <wsdl:part name="deleteRoleReturn" type="xsd:string"/>
+  </wsdl:message>
+  <wsdl:message name="deleteUserRoleSetResponse">
+    <wsdl:part name="deleteUserRoleSetReturn" type="xsd:string"/>
+  </wsdl:message>
+  <wsdl:message name="addUserRoleSetRequest">
+    <wsdl:part name="userRoleXML" type="xsd:string"/>
+  </wsdl:message>
+  <wsdl:message name="addRoleResponse">
+    <wsdl:part name="addRoleReturn" type="xsd:string"/>
+  </wsdl:message>
+  <wsdl:portType name="RoleServiceAgent">
+    <wsdl:operation name="addRole" parameterOrder="roleXML">
+      <wsdl:input message="impl:addRoleRequest" name="addRoleRequest"/>
+      <wsdl:output message="impl:addRoleResponse" name="addRoleResponse"/>
+    </wsdl:operation>
+    <wsdl:operation name="deleteRole" parameterOrder="roleXML">
+      <wsdl:input message="impl:deleteRoleRequest" name="deleteRoleRequest"/>
+      <wsdl:output message="impl:deleteRoleResponse" name="deleteRoleResponse"/>
+    </wsdl:operation>
+    <wsdl:operation name="updateRole" parameterOrder="roleXML">
+      <wsdl:input message="impl:updateRoleRequest" name="updateRoleRequest"/>
+      <wsdl:output message="impl:updateRoleResponse" name="updateRoleResponse"/>
+    </wsdl:operation>
+    <wsdl:operation name="addUserRoleSet" parameterOrder="userRoleXML">
+      <wsdl:input message="impl:addUserRoleSetRequest" name="addUserRoleSetRequest"/>
+      <wsdl:output message="impl:addUserRoleSetResponse" name="addUserRoleSetResponse"/>
+    </wsdl:operation>
+    <wsdl:operation name="deleteUserRoleSet" parameterOrder="userRoleXML">
+      <wsdl:input message="impl:deleteUserRoleSetRequest" name="deleteUserRoleSetRequest"/>
+      <wsdl:output message="impl:deleteUserRoleSetResponse" name="deleteUserRoleSetResponse"/>
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="RoleServiceSoapBinding" type="impl:RoleServiceAgent">
+    <wsdlsoap:binding style="rpc" transport="http://schemas.xmlsoap.org/soap/http"/>
+    <wsdl:operation name="addRole">
+      <wsdlsoap:operation soapAction=""/>
+      <wsdl:input name="addRoleRequest">
+        <wsdlsoap:body namespace="http://agent.ws.service.inter.coc.cattsoft.com" use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="addRoleResponse">
+        <wsdlsoap:body namespace="www.cattsoft.com" use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="deleteRole">
+      <wsdlsoap:operation soapAction=""/>
+      <wsdl:input name="deleteRoleRequest">
+        <wsdlsoap:body namespace="http://agent.ws.service.inter.coc.cattsoft.com" use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="deleteRoleResponse">
+        <wsdlsoap:body namespace="www.cattsoft.com" use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="updateRole">
+      <wsdlsoap:operation soapAction=""/>
+      <wsdl:input name="updateRoleRequest">
+        <wsdlsoap:body namespace="http://agent.ws.service.inter.coc.cattsoft.com" use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="updateRoleResponse">
+        <wsdlsoap:body namespace="www.cattsoft.com" use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="addUserRoleSet">
+      <wsdlsoap:operation soapAction=""/>
+      <wsdl:input name="addUserRoleSetRequest">
+        <wsdlsoap:body namespace="http://agent.ws.service.inter.coc.cattsoft.com" use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="addUserRoleSetResponse">
+        <wsdlsoap:body namespace="www.cattsoft.com" use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="deleteUserRoleSet">
+      <wsdlsoap:operation soapAction=""/>
+      <wsdl:input name="deleteUserRoleSetRequest">
+        <wsdlsoap:body namespace="http://agent.ws.service.inter.coc.cattsoft.com" use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="deleteUserRoleSetResponse">
+        <wsdlsoap:body namespace="www.cattsoft.com" use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="RoleServiceAgentService">
+    <wsdl:port binding="impl:RoleServiceSoapBinding" name="RoleService">
+      <wsdlsoap:address location="http://localhost:8080/coc_test/services/RoleService"/>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>]]></con:content><con:type>http://schemas.xmlsoap.org/wsdl/</con:type></con:part></con:definitionCache><con:endpoints><con:endpoint>http://localhost:8080/coc_test/services/RoleService</con:endpoint></con:endpoints><con:operation isOneWay="false" action="" name="addRole" bindingOperationName="addRole" type="Request-Response" outputName="addRoleResponse" inputName="addRoleRequest" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call name="Request 1"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:8080/jax/RoleService</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:agen="http://agent.ws.service.inter.coc.cattsoft.com">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <agen:addRole>
+         <roleXML>?</roleXML>
+      </agen:addRole>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:credentials><con:authType>Global HTTP Settings</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="www.cattsoft.com/RoleServiceAgent/addRoleRequest"/><con:wsrmConfig version="1.2"/></con:call></con:operation><con:operation isOneWay="false" action="" name="addUserRoleSet" bindingOperationName="addUserRoleSet" type="Request-Response" outputName="addUserRoleSetResponse" inputName="addUserRoleSetRequest" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:8080/coc_test/services/RoleService</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:agen="http://agent.ws.service.inter.coc.cattsoft.com">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <agen:addUserRoleSet>
+         <userRoleXML>?</userRoleXML>
+      </agen:addUserRoleSet>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="www.cattsoft.com/RoleServiceAgent/addUserRoleSetRequest"/></con:call></con:operation><con:operation isOneWay="false" action="" name="deleteRole" bindingOperationName="deleteRole" type="Request-Response" outputName="deleteRoleResponse" inputName="deleteRoleRequest" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:8080/coc_test/services/RoleService</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:agen="http://agent.ws.service.inter.coc.cattsoft.com">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <agen:deleteRole>
+         <roleXML>?</roleXML>
+      </agen:deleteRole>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="www.cattsoft.com/RoleServiceAgent/deleteRoleRequest"/></con:call></con:operation><con:operation isOneWay="false" action="" name="deleteUserRoleSet" bindingOperationName="deleteUserRoleSet" type="Request-Response" outputName="deleteUserRoleSetResponse" inputName="deleteUserRoleSetRequest" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:8080/coc_test/services/RoleService</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:agen="http://agent.ws.service.inter.coc.cattsoft.com">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <agen:deleteUserRoleSet>
+         <userRoleXML>?</userRoleXML>
+      </agen:deleteUserRoleSet>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="www.cattsoft.com/RoleServiceAgent/deleteUserRoleSetRequest"/></con:call></con:operation><con:operation isOneWay="false" action="" name="updateRole" bindingOperationName="updateRole" type="Request-Response" outputName="updateRoleResponse" inputName="updateRoleRequest" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:8080/coc_test/services/RoleService</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:agen="http://agent.ws.service.inter.coc.cattsoft.com">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <agen:updateRole>
+         <roleXML>?</roleXML>
+      </agen:updateRole>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="www.cattsoft.com/RoleServiceAgent/updateRoleRequest"/></con:call></con:operation></con:interface><con:interface xsi:type="con:WsdlInterface" wsaVersion="NONE" name="DepartmentServiceSoapBinding" type="wsdl" bindingName="{www.cattsoft.com}DepartmentServiceSoapBinding" soapVersion="1_1" anonymous="optional" definition="file:/workspace/rock/jax-ws-test/src/main/webapp/WEB-INF/wsdl/DepartmentService.xml" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:settings/><con:definitionCache type="TEXT" rootPart="file:/workspace/rock/jax-ws-test/src/main/webapp/WEB-INF/wsdl/DepartmentService.xml"><con:part><con:url>file:/workspace/rock/jax-ws-test/src/main/webapp/WEB-INF/wsdl/DepartmentService.xml</con:url><con:content><![CDATA[<wsdl:definitions targetNamespace="www.cattsoft.com" xmlns:apachesoap="http://xml.apache.org/xml-soap" xmlns:impl="www.cattsoft.com" xmlns:intf="www.cattsoft.com" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:wsdlsoap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <!--WSDL created by Apache Axis version: 1.4
+Built on Apr 22, 2006 (06:55:48 PDT)-->
+  <wsdl:message name="updateDepartmentResponse">
+    <wsdl:part name="updateDepartmentReturn" type="xsd:string"/>
+  </wsdl:message>
+  <wsdl:message name="updateDepartmentRequest">
+    <wsdl:part name="deptXML" type="xsd:string"/>
+  </wsdl:message>
+  <wsdl:message name="addDepartmentRequest">
+    <wsdl:part name="deptXML" type="xsd:string"/>
+  </wsdl:message>
+  <wsdl:message name="addDepartmentResponse">
+    <wsdl:part name="addDepartmentReturn" type="xsd:string"/>
+  </wsdl:message>
+  <wsdl:message name="deleteDepartmentRequest">
+    <wsdl:part name="deptXML" type="xsd:string"/>
+  </wsdl:message>
+  <wsdl:message name="deleteDepartmentResponse">
+    <wsdl:part name="deleteDepartmentReturn" type="xsd:string"/>
+  </wsdl:message>
+  <wsdl:portType name="DepartmentServiceAgent">
+    <wsdl:operation name="addDepartment" parameterOrder="deptXML">
+      <wsdl:input message="impl:addDepartmentRequest" name="addDepartmentRequest"/>
+      <wsdl:output message="impl:addDepartmentResponse" name="addDepartmentResponse"/>
+    </wsdl:operation>
+    <wsdl:operation name="deleteDepartment" parameterOrder="deptXML">
+      <wsdl:input message="impl:deleteDepartmentRequest" name="deleteDepartmentRequest"/>
+      <wsdl:output message="impl:deleteDepartmentResponse" name="deleteDepartmentResponse"/>
+    </wsdl:operation>
+    <wsdl:operation name="updateDepartment" parameterOrder="deptXML">
+      <wsdl:input message="impl:updateDepartmentRequest" name="updateDepartmentRequest"/>
+      <wsdl:output message="impl:updateDepartmentResponse" name="updateDepartmentResponse"/>
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="DepartmentServiceSoapBinding" type="impl:DepartmentServiceAgent">
+    <wsdlsoap:binding style="rpc" transport="http://schemas.xmlsoap.org/soap/http"/>
+    <wsdl:operation name="addDepartment">
+      <wsdlsoap:operation soapAction=""/>
+      <wsdl:input name="addDepartmentRequest">
+        <wsdlsoap:body namespace="http://agent.ws.service.inter.coc.cattsoft.com" use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="addDepartmentResponse">
+        <wsdlsoap:body namespace="www.cattsoft.com" use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="deleteDepartment">
+      <wsdlsoap:operation soapAction=""/>
+      <wsdl:input name="deleteDepartmentRequest">
+        <wsdlsoap:body namespace="http://agent.ws.service.inter.coc.cattsoft.com" use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="deleteDepartmentResponse">
+        <wsdlsoap:body namespace="www.cattsoft.com" use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="updateDepartment">
+      <wsdlsoap:operation soapAction=""/>
+      <wsdl:input name="updateDepartmentRequest">
+        <wsdlsoap:body namespace="http://agent.ws.service.inter.coc.cattsoft.com" use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="updateDepartmentResponse">
+        <wsdlsoap:body namespace="www.cattsoft.com" use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="DepartmentServiceAgentService">
+    <wsdl:port binding="impl:DepartmentServiceSoapBinding" name="DepartmentService">
+      <wsdlsoap:address location="http://localhost:8080/coc_test/services/DepartmentService"/>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>]]></con:content><con:type>http://schemas.xmlsoap.org/wsdl/</con:type></con:part></con:definitionCache><con:endpoints><con:endpoint>http://localhost:8080/coc_test/services/DepartmentService</con:endpoint></con:endpoints><con:operation isOneWay="false" action="" name="addDepartment" bindingOperationName="addDepartment" type="Request-Response" outputName="addDepartmentResponse" inputName="addDepartmentRequest" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:8080/coc_test/services/DepartmentService</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:agen="http://agent.ws.service.inter.coc.cattsoft.com">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <agen:addDepartment>
+         <deptXML>?</deptXML>
+      </agen:addDepartment>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="www.cattsoft.com/DepartmentServiceAgent/addDepartmentRequest"/></con:call></con:operation><con:operation isOneWay="false" action="" name="deleteDepartment" bindingOperationName="deleteDepartment" type="Request-Response" outputName="deleteDepartmentResponse" inputName="deleteDepartmentRequest" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:8080/coc_test/services/DepartmentService</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:agen="http://agent.ws.service.inter.coc.cattsoft.com">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <agen:deleteDepartment>
+         <deptXML>?</deptXML>
+      </agen:deleteDepartment>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="www.cattsoft.com/DepartmentServiceAgent/deleteDepartmentRequest"/></con:call></con:operation><con:operation isOneWay="false" action="" name="updateDepartment" bindingOperationName="updateDepartment" type="Request-Response" outputName="updateDepartmentResponse" inputName="updateDepartmentRequest" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:8080/coc_test/services/DepartmentService</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:agen="http://agent.ws.service.inter.coc.cattsoft.com">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <agen:updateDepartment>
+         <deptXML>?</deptXML>
+      </agen:updateDepartment>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="www.cattsoft.com/DepartmentServiceAgent/updateDepartmentRequest"/></con:call></con:operation></con:interface><con:properties/><con:wssContainer/></con:soapui-project>
