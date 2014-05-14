@@ -5,4 +5,11 @@
 
 	<!-- Root Context: defines shared resources visible to all other web components -->
 
+	<!-- <bean class="org.springframework.remoting.jaxws.SimpleJaxWsServiceExporter">
+		<property name="baseAddress" value="http://localhost:8888/service/"></property>
+	</bean>
+
+	<bean class="my.code.jax.ws.UserService.UserServiceAgentImpl" /> -->
+
+
 </beans>

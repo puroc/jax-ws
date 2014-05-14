@@ -24,7 +24,7 @@ import javax.jws.soap.SOAPBinding;
                       serviceName = "UserServiceAgentService",
                       portName = "UserService",
                       targetNamespace = "www.cattsoft.com",
-                      wsdlLocation = "UserService.xml",
+                      wsdlLocation = "/WEB-INF/wsdl/UserService.xml",
                       endpointInterface = "my.code.jax.ws.UserService.UserServiceAgent")
                       
 public class UserServiceAgentImpl implements UserServiceAgent {
