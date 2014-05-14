@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wsdl:definitions targetNamespace="www.cattsoft.com" xmlns:apachesoap="http://xml.apache.org/xml-soap" xmlns:impl="www.cattsoft.com" xmlns:intf="www.cattsoft.com" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:wsdlsoap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+<!--WSDL created by Apache Axis version: 1.4
+Built on Apr 22, 2006 (06:55:48 PDT)-->
+
+   <wsdl:message name="updatePersonRequest">
+
+      <wsdl:part name="personXML" type="xsd:string"/>
+
+   </wsdl:message>
+
+   <wsdl:message name="deletePersonRequest">
+
+      <wsdl:part name="personXML" type="xsd:string"/>
+
+   </wsdl:message>
+
+   <wsdl:message name="addPersonResponse">
+
+      <wsdl:part name="addPersonReturn" type="xsd:string"/>
+
+   </wsdl:message>
+
+   <wsdl:message name="updatePersonResponse">
+
+      <wsdl:part name="updatePersonReturn" type="xsd:string"/>
+
+   </wsdl:message>
+
+   <wsdl:message name="deletePersonResponse">
+
+      <wsdl:part name="deletePersonReturn" type="xsd:string"/>
+
+   </wsdl:message>
+
+   <wsdl:message name="addPersonRequest">
+
+      <wsdl:part name="personXML" type="xsd:string"/>
+
+   </wsdl:message>
+
+   <wsdl:portType name="UserServiceAgent">
+
+      <wsdl:operation name="addPerson" parameterOrder="personXML">
+
+         <wsdl:input message="impl:addPersonRequest" name="addPersonRequest"/>
+
+         <wsdl:output message="impl:addPersonResponse" name="addPersonResponse"/>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="deletePerson" parameterOrder="personXML">
+
+         <wsdl:input message="impl:deletePersonRequest" name="deletePersonRequest"/>
+
+         <wsdl:output message="impl:deletePersonResponse" name="deletePersonResponse"/>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="updatePerson" parameterOrder="personXML">
+
+         <wsdl:input message="impl:updatePersonRequest" name="updatePersonRequest"/>
+
+         <wsdl:output message="impl:updatePersonResponse" name="updatePersonResponse"/>
+
+      </wsdl:operation>
+
+   </wsdl:portType>
+
+   <wsdl:binding name="UserServiceSoapBinding" type="impl:UserServiceAgent">
+
+      <wsdlsoap:binding style="rpc" transport="http://schemas.xmlsoap.org/soap/http"/>
+
+      <wsdl:operation name="addPerson">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="addPersonRequest">
+
+            <wsdlsoap:body namespace="http://agent.ws.service.inter.coc.cattsoft.com" use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="addPersonResponse">
+
+            <wsdlsoap:body namespace="www.cattsoft.com" use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="deletePerson">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="deletePersonRequest">
+
+            <wsdlsoap:body namespace="http://agent.ws.service.inter.coc.cattsoft.com" use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="deletePersonResponse">
+
+            <wsdlsoap:body namespace="www.cattsoft.com" use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="updatePerson">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="updatePersonRequest">
+
+            <wsdlsoap:body namespace="http://agent.ws.service.inter.coc.cattsoft.com" use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="updatePersonResponse">
+
+            <wsdlsoap:body namespace="www.cattsoft.com" use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+   </wsdl:binding>
+
+   <wsdl:service name="UserServiceAgentService">
+
+      <wsdl:port binding="impl:UserServiceSoapBinding" name="UserService">
+
+         <wsdlsoap:address location="http://localhost:8080/coc_test/services/UserService"/>
+
+      </wsdl:port>
+
+   </wsdl:service>
+
+</wsdl:definitions>

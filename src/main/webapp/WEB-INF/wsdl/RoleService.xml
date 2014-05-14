@@ -1,0 +1,216 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wsdl:definitions targetNamespace="www.cattsoft.com" xmlns:apachesoap="http://xml.apache.org/xml-soap" xmlns:impl="www.cattsoft.com" xmlns:intf="www.cattsoft.com" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:wsdlsoap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+<!--WSDL created by Apache Axis version: 1.4
+Built on Apr 22, 2006 (06:55:48 PDT)-->
+
+   <wsdl:message name="updateRoleResponse">
+
+      <wsdl:part name="updateRoleReturn" type="xsd:string"/>
+
+   </wsdl:message>
+
+   <wsdl:message name="addUserRoleSetResponse">
+
+      <wsdl:part name="addUserRoleSetReturn" type="xsd:string"/>
+
+   </wsdl:message>
+
+   <wsdl:message name="deleteRoleRequest">
+
+      <wsdl:part name="roleXML" type="xsd:string"/>
+
+   </wsdl:message>
+
+   <wsdl:message name="addRoleRequest">
+
+      <wsdl:part name="roleXML" type="xsd:string"/>
+
+   </wsdl:message>
+
+   <wsdl:message name="updateRoleRequest">
+
+      <wsdl:part name="roleXML" type="xsd:string"/>
+
+   </wsdl:message>
+
+   <wsdl:message name="deleteUserRoleSetRequest">
+
+      <wsdl:part name="userRoleXML" type="xsd:string"/>
+
+   </wsdl:message>
+
+   <wsdl:message name="deleteRoleResponse">
+
+      <wsdl:part name="deleteRoleReturn" type="xsd:string"/>
+
+   </wsdl:message>
+
+   <wsdl:message name="deleteUserRoleSetResponse">
+
+      <wsdl:part name="deleteUserRoleSetReturn" type="xsd:string"/>
+
+   </wsdl:message>
+
+   <wsdl:message name="addUserRoleSetRequest">
+
+      <wsdl:part name="userRoleXML" type="xsd:string"/>
+
+   </wsdl:message>
+
+   <wsdl:message name="addRoleResponse">
+
+      <wsdl:part name="addRoleReturn" type="xsd:string"/>
+
+   </wsdl:message>
+
+   <wsdl:portType name="RoleServiceAgent">
+
+      <wsdl:operation name="addRole" parameterOrder="roleXML">
+
+         <wsdl:input message="impl:addRoleRequest" name="addRoleRequest"/>
+
+         <wsdl:output message="impl:addRoleResponse" name="addRoleResponse"/>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="deleteRole" parameterOrder="roleXML">
+
+         <wsdl:input message="impl:deleteRoleRequest" name="deleteRoleRequest"/>
+
+         <wsdl:output message="impl:deleteRoleResponse" name="deleteRoleResponse"/>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="updateRole" parameterOrder="roleXML">
+
+         <wsdl:input message="impl:updateRoleRequest" name="updateRoleRequest"/>
+
+         <wsdl:output message="impl:updateRoleResponse" name="updateRoleResponse"/>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="addUserRoleSet" parameterOrder="userRoleXML">
+
+         <wsdl:input message="impl:addUserRoleSetRequest" name="addUserRoleSetRequest"/>
+
+         <wsdl:output message="impl:addUserRoleSetResponse" name="addUserRoleSetResponse"/>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="deleteUserRoleSet" parameterOrder="userRoleXML">
+
+         <wsdl:input message="impl:deleteUserRoleSetRequest" name="deleteUserRoleSetRequest"/>
+
+         <wsdl:output message="impl:deleteUserRoleSetResponse" name="deleteUserRoleSetResponse"/>
+
+      </wsdl:operation>
+
+   </wsdl:portType>
+
+   <wsdl:binding name="RoleServiceSoapBinding" type="impl:RoleServiceAgent">
+
+      <wsdlsoap:binding style="rpc" transport="http://schemas.xmlsoap.org/soap/http"/>
+
+      <wsdl:operation name="addRole">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="addRoleRequest">
+
+            <wsdlsoap:body namespace="http://agent.ws.service.inter.coc.cattsoft.com" use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="addRoleResponse">
+
+            <wsdlsoap:body namespace="www.cattsoft.com" use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="deleteRole">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="deleteRoleRequest">
+
+            <wsdlsoap:body namespace="http://agent.ws.service.inter.coc.cattsoft.com" use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="deleteRoleResponse">
+
+            <wsdlsoap:body namespace="www.cattsoft.com" use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="updateRole">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="updateRoleRequest">
+
+            <wsdlsoap:body namespace="http://agent.ws.service.inter.coc.cattsoft.com" use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="updateRoleResponse">
+
+            <wsdlsoap:body namespace="www.cattsoft.com" use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="addUserRoleSet">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="addUserRoleSetRequest">
+
+            <wsdlsoap:body namespace="http://agent.ws.service.inter.coc.cattsoft.com" use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="addUserRoleSetResponse">
+
+            <wsdlsoap:body namespace="www.cattsoft.com" use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="deleteUserRoleSet">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="deleteUserRoleSetRequest">
+
+            <wsdlsoap:body namespace="http://agent.ws.service.inter.coc.cattsoft.com" use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="deleteUserRoleSetResponse">
+
+            <wsdlsoap:body namespace="www.cattsoft.com" use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+   </wsdl:binding>
+
+   <wsdl:service name="RoleServiceAgentService">
+
+      <wsdl:port binding="impl:RoleServiceSoapBinding" name="RoleService">
+
+         <wsdlsoap:address location="http://localhost:8080/coc_test/services/RoleService"/>
+
+      </wsdl:port>
+
+   </wsdl:service>
+
+</wsdl:definitions>

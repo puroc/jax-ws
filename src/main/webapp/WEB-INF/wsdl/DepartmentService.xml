@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wsdl:definitions targetNamespace="www.cattsoft.com" xmlns:apachesoap="http://xml.apache.org/xml-soap" xmlns:impl="www.cattsoft.com" xmlns:intf="www.cattsoft.com" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:wsdlsoap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+<!--WSDL created by Apache Axis version: 1.4
+Built on Apr 22, 2006 (06:55:48 PDT)-->
+
+   <wsdl:message name="updateDepartmentResponse">
+
+      <wsdl:part name="updateDepartmentReturn" type="xsd:string"/>
+
+   </wsdl:message>
+
+   <wsdl:message name="updateDepartmentRequest">
+
+      <wsdl:part name="deptXML" type="xsd:string"/>
+
+   </wsdl:message>
+
+   <wsdl:message name="addDepartmentRequest">
+
+      <wsdl:part name="deptXML" type="xsd:string"/>
+
+   </wsdl:message>
+
+   <wsdl:message name="addDepartmentResponse">
+
+      <wsdl:part name="addDepartmentReturn" type="xsd:string"/>
+
+   </wsdl:message>
+
+   <wsdl:message name="deleteDepartmentRequest">
+
+      <wsdl:part name="deptXML" type="xsd:string"/>
+
+   </wsdl:message>
+
+   <wsdl:message name="deleteDepartmentResponse">
+
+      <wsdl:part name="deleteDepartmentReturn" type="xsd:string"/>
+
+   </wsdl:message>
+
+   <wsdl:portType name="DepartmentServiceAgent">
+
+      <wsdl:operation name="addDepartment" parameterOrder="deptXML">
+
+         <wsdl:input message="impl:addDepartmentRequest" name="addDepartmentRequest"/>
+
+         <wsdl:output message="impl:addDepartmentResponse" name="addDepartmentResponse"/>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="deleteDepartment" parameterOrder="deptXML">
+
+         <wsdl:input message="impl:deleteDepartmentRequest" name="deleteDepartmentRequest"/>
+
+         <wsdl:output message="impl:deleteDepartmentResponse" name="deleteDepartmentResponse"/>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="updateDepartment" parameterOrder="deptXML">
+
+         <wsdl:input message="impl:updateDepartmentRequest" name="updateDepartmentRequest"/>
+
+         <wsdl:output message="impl:updateDepartmentResponse" name="updateDepartmentResponse"/>
+
+      </wsdl:operation>
+
+   </wsdl:portType>
+
+   <wsdl:binding name="DepartmentServiceSoapBinding" type="impl:DepartmentServiceAgent">
+
+      <wsdlsoap:binding style="rpc" transport="http://schemas.xmlsoap.org/soap/http"/>
+
+      <wsdl:operation name="addDepartment">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="addDepartmentRequest">
+
+            <wsdlsoap:body namespace="http://agent.ws.service.inter.coc.cattsoft.com" use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="addDepartmentResponse">
+
+            <wsdlsoap:body namespace="www.cattsoft.com" use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="deleteDepartment">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="deleteDepartmentRequest">
+
+            <wsdlsoap:body namespace="http://agent.ws.service.inter.coc.cattsoft.com" use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="deleteDepartmentResponse">
+
+            <wsdlsoap:body namespace="www.cattsoft.com" use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="updateDepartment">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="updateDepartmentRequest">
+
+            <wsdlsoap:body namespace="http://agent.ws.service.inter.coc.cattsoft.com" use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="updateDepartmentResponse">
+
+            <wsdlsoap:body namespace="www.cattsoft.com" use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+   </wsdl:binding>
+
+   <wsdl:service name="DepartmentServiceAgentService">
+
+      <wsdl:port binding="impl:DepartmentServiceSoapBinding" name="DepartmentService">
+
+         <wsdlsoap:address location="http://localhost:8080/coc_test/services/DepartmentService"/>
+
+      </wsdl:port>
+
+   </wsdl:service>
+
+</wsdl:definitions>

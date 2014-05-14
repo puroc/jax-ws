@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="cxf wsdl2java" default="cxfWSDLToJava" basedir=".">
+	<property name="src.dir" value="${basedir}/src" />
+	<property name="cxf.home" location="/Users/pud/Documents/still/cxf/apache-cxf-2.7.11" />
+
+	<path id="cxf.classpath">
+		<fileset dir="${cxf.home}/lib">
+			<include name="*.jar" />
+		</fileset>
+	</path>
+
+	<target name="cxfWSDLToJava">
+		<java classname="org.apache.cxf.tools.wsdlto.WSDLToJava" fork="true">
+			<arg value="-p" />
+			<!--<arg value="my.code.jax.ws.UserService" />-->
+			<!--<arg value="my.code.jax.ws.RoleService" />-->
+			<arg value="my.code.jax.ws.DepartmentService" />
+			<arg value="-d" />
+			<arg value="/workspace/rock/jax-ws-test/src/main/java" />
+			<arg value="-all" />
+			<!--<arg value="UserService.xml" />-->
+			<!--<arg value="RoleService.xml" />-->
+			<arg value="DepartmentService.xml" />
+			<classpath>
+				<path refid="cxf.classpath" />
+			</classpath>
+		</java>
+	</target>
+</project>
