@@ -1,15 +1,41 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <beans xmlns="http://www.springframework.org/schema/beans"
-	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ws="http://jax-ws.dev.java.net/spring/core"
+	xmlns:wss="http://jax-ws.dev.java.net/spring/servlet"
+	xsi:schemaLocation="
+    http://www.springframework.org/schema/beans
+    http://www.springframework.org/schema/beans/spring-beans-3.1.xsd
+    http://jax-ws.dev.java.net/spring/core
+    http://jax-ws.dev.java.net/spring/core.xsd
+    http://jax-ws.dev.java.net/spring/servlet
+    http://jax-ws.dev.java.net/spring/servlet.xsd">
 
-	<!-- Root Context: defines shared resources visible to all other web components -->
+	<wss:binding url="/UserService">
+		<wss:service>
+			<ws:service bean="#UserServiceAgentImpl" />
+		</wss:service>
+	</wss:binding>
 
-	<!-- <bean class="org.springframework.remoting.jaxws.SimpleJaxWsServiceExporter">
-		<property name="baseAddress" value="http://localhost:8888/service/"></property>
+	<bean id="UserServiceAgentImpl" class="my.code.jax.ws.userService.UserServiceAgentImpl">
 	</bean>
 
-	<bean class="my.code.jax.ws.UserService.UserServiceAgentImpl" /> -->
+	<wss:binding url="/RoleService">
+		<wss:service>
+			<ws:service bean="#RoleServiceAgentImpl" />
+		</wss:service>
+	</wss:binding>
 
+	<bean id="RoleServiceAgentImpl" class="my.code.jax.ws.roleService.RoleServiceAgentImpl">
+	</bean>
+
+	<wss:binding url="/DepartmentService">
+		<wss:service>
+			<ws:service bean="#DepartmentServiceAgentImpl" />
+		</wss:service>
+	</wss:binding>
+
+	<bean id="DepartmentServiceAgentImpl"
+		class="my.code.jax.ws.departmentService.DepartmentServiceAgentImpl">
+	</bean>
 
 </beans>

@@ -12,15 +12,15 @@
 	<target name="cxfWSDLToJava">
 		<java classname="org.apache.cxf.tools.wsdlto.WSDLToJava" fork="true">
 			<arg value="-p" />
-			<!--<arg value="my.code.jax.ws.UserService" />-->
-			<!--<arg value="my.code.jax.ws.RoleService" />-->
-			<arg value="my.code.jax.ws.DepartmentService" />
+			<arg value="my.code.jax.ws.userService" />
+			<!--<arg value="my.code.jax.ws.roleService" />-->
+			<!--<arg value="my.code.jax.ws.departmentService" />-->
 			<arg value="-d" />
 			<arg value="/workspace/rock/jax-ws-test/src/main/java" />
 			<arg value="-all" />
-			<!--<arg value="UserService.xml" />-->
-			<!--<arg value="RoleService.xml" />-->
-			<arg value="DepartmentService.xml" />
+			<arg value="./WEB-INF/wsdl/UserService.xml" />
+			<!--<arg value="./WEB-INF/wsdl/RoleService.xml" />-->
+			<!--<arg value="./WEB-INF/wsdl/DepartmentService.xml" />-->
 			<classpath>
 				<path refid="cxf.classpath" />
 			</classpath>
